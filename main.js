@@ -34,10 +34,14 @@ exports.notificationMainProcess = function () {
         message: 'Nofitificaiton Main Process Message',
         icon: 'file://' + __dirname + '/img/icon.png',
         sound: true,
-        wait: false,
+        wait: true,
         contentImage: 'file://' + __dirname + '/img/icon.png'
     }, function (err, response) {
         console.log(response);
+    });
+
+    notifier.on('click', function (notifierObject, options) {
+        console.log('notification click');
     });
 
     notifier.on('timeout', function (notifierObject, options) {
