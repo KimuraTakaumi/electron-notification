@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <script type="text/javascript">
+        var main = require("remote").require("./main");
+
+        function notification() {
+            new Notification("Hello World");
+        }
+
+        function notificationMainProcess() {
+            main.notificationMainProcess();
+        }
+    </script>
+</head>
+<body>
+<h1>Hello World!</h1>
+<button onclick="notification()">notification</button>
+<button onclick="notificationMainProcess()">notification main process</button>
+</body>
+</html>
